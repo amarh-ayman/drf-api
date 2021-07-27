@@ -5,8 +5,8 @@ from django.db.models.deletion import CASCADE
 
 class PatientRegister(models.Model):
   name = models.CharField(max_length=64)
-  age = models.IntegerField(max_length=3)
-  IdNum=models.IntegerField(max_length=15)
+  age = models.IntegerField()
+  idNum=models.IntegerField(default=0)
   disease =models.TextField()
   medicine=models.TextField()
   doctor_or_nurse =models.ForeignKey(get_user_model(),on_delete=CASCADE)
